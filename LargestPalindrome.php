@@ -4,9 +4,8 @@
 		for ($x = 999; $x > 100; $x--) {
 			$product = $i * $x;
 			$reverse = (int)strrev((string)$product);
-			if ($product === $reverse) {
-				$currentLargestPalindrome = $currentLargestPalindrome < $product ? $product : $currentLargestPalindrome;
-			}
+			$currentLargestPalindrome = $product === $reverse && $currentLargestPalindrome < $product ? 
+				$product : $currentLargestPalindrome;
 		}
 	}
 	echo "The largest palindrome made from the product of two 3-digit numbers is $currentLargestPalindrome";
